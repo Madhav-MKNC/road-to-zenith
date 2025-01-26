@@ -15,7 +15,7 @@ const BlogPost = () => {
 
   useEffect(() => {
     const fetchPosts = async () => {
-      const res = await fetch("/bloglist.json");
+      const res = await fetch("/road-to-zenith/bloglist.json");
       const data: BlogPostType[] = await res.json();
       setPosts(data);
 
@@ -24,7 +24,7 @@ const BlogPost = () => {
       setNextPost(data.find((p) => Number(p.id) === Number(currentPost?.id) + 1));
 
       if (currentPost) {
-        const markdownRes = await fetch(`/posts/${currentPost.slug}.md`);
+        const markdownRes = await fetch(`/road-to-zenith/posts/${currentPost.slug}.md`);
         const markdown = await markdownRes.text();
         setContent(markdown);
       }

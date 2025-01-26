@@ -15,7 +15,7 @@ const BlogList = () => {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const response = await fetch("/bloglist.json");
+        const response = await fetch("/road-to-zenith/bloglist.json");
         if (!response.ok) {
           throw new Error("Failed to fetch blog posts");
         }
